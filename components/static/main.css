@@ -1,0 +1,8 @@
+.test{
+    background-color: blueviolet;
+}
+
+.form-control:focus {
+    border-color: #2d302e;
+    box-shadow: 0 0 0 0.2rem rgba(127, 129, 127, 0.25);
+} 

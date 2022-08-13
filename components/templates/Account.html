@@ -1,0 +1,52 @@
+{% extends 'layouts.html'%}
+{% block content %}
+<br>
+<br>
+<div class="container border bg-light text-dark">
+  <br>
+  <h5>Name - {{current_user.username}}</h5>
+  <h5>Email - {{current_user.email}}</h5>
+  <div class="mb-5">
+    <a href="/update/{{current_user.id}}" method='POST' type="button" class="btn btn-outline-dark float-right">Update Info</a>
+  </div>
+  <br>
+</div>
+<br>
+<br>
+{% if user|length == 0 %}                     
+  <div><img src="{{url_for('static',filename='logo.jpg')}}" class="img-thumbnail mx-auto d-block" alt="bus"></div>
+  <br>
+{% else %}
+  <div class="container">
+  <h2>Booking Details</h2>
+  </div>
+  <table class="table table-striped container">
+  <thead>
+    <tr>
+      <th>Passenger Name</th>
+      <th>Source</th>
+      <th>Destination</th>
+      <th>Date</th>
+      <th>Seats</th>
+      <th>Fare</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {% for info in info %}
+      {%if info[1] == current_user.id%}
+      <td>{{info[8]}}</td>
+      <td>{{info[3]}}</td>
+      <td>{{info[4]}}</td>
+      <td>{{info[7]}}</td>
+      <td>{{info[9]}}</td>
+      <td>{{info[5]}}</td>
+      <td> <a href="/delete/{{current_user.id}}" type="button" class="btn btn-outline-dark float-right">Cancel Booking</a></td>
+    </tr>
+    {%endif%}
+    {% endfor %}
+  </tbody>
+  </table>
+{% endif %}
+  {% endblock content %}
