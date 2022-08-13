@@ -1,5 +1,4 @@
 import email
-from turtle import title
 from flask import Flask, render_template, url_for,redirect,flash,request
 from components import forms,app,db,bcrypt,conn
 from components.forms import RegistrationForm,LoginForm
@@ -8,7 +7,7 @@ from components.models import Datas,PassengerInfo
 from components import app, db
 from components.forms import RegistrationForm
 from flask_login import login_required, login_user,logout_user,current_user
-from datetime import datetime, timedelta
+from datetime import datetime
 
 @app.route('/')
 def homepage():
