@@ -126,7 +126,7 @@ def delete(id):
     now = datetime.now()
     print('msg',now.date())
     today_date = now.date()
-    if booking_date == today_date or booking_date > today_date:
+    if booking_date == today_date or booking_date < today_date:
         flash(f'You can not cancel {data.source} to {data.destination} booking!!!', category='danger')
         return redirect("/account")        
     else:
