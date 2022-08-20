@@ -3,7 +3,6 @@ from flask import Flask, render_template, url_for,redirect,flash,request
 from components import forms,app,db,bcrypt,conn
 from components.forms import RegistrationForm,LoginForm
 from components.models import Datas,PassengerInfo
-# app = Flask(__name__)
 from components import app, db
 from components.forms import RegistrationForm
 from flask_login import login_required, login_user,logout_user,current_user
@@ -46,7 +45,7 @@ def register():
         return redirect(url_for('login'))
 
    return render_template('register.html',title='Register',form=form)
-#    return render_template('register.html",title='Register',form=form)
+
 
 
 @app.route('/login',methods=['POST','GET'])
@@ -161,6 +160,3 @@ def success():
 def handle_global_error(e):
     return redirect(url_for('homepage'))
 
-#  # main driver function
-# if __name__ == '__main__':
-#     app.run()
