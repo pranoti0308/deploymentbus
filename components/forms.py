@@ -14,8 +14,3 @@ class LoginForm(FlaskForm):
     password=PasswordField(label='Password',validators=[DataRequired(),Length(min=6,max=16)])
     submit=SubmitField(label='Login')
 
-# class BookingInfo(FlaskForm):
-#     customer_id=StringField(label='cuntomer_id',validators=[DataRequired(),Length(min=1)])
-#     source=StringField(label='From',validators=[DataRequired(),Length(min=3,max=20)])
-#     destination=StringField(label='To',validators=[DataRequired(),Length(min=3,max=20)])
-#     submit=SubmitField(label='Search Buses')
