@@ -34,10 +34,5 @@ class PassengerInfo(db.Model,UserMixin):
     b_date = db.Column(db.Date,default=datetime.utcnow)
     pname = db.Column(db.String(20),nullable=False)
     seats = db.Column(db.String(20),nullable=False)
-    # def __init__(username, email, password):
-    #     self.email = email
-    #     self.password = password
-    
-    # def __repr_(self):
-    #     return f'{self.username} : {self.email} : {self.date_created.strftime("%d/%m/%y, %H:%M:%S")}'
+  
 
